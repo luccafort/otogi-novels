@@ -45,6 +45,8 @@ gem 'whenever', require: false # cronをデプロイと同時に設定してく�
 gem 'validates_timeliness', '~> 4.0' # 時間関係のvalidationを追加してくれる
 gem 'faker' # テスト用データを生成してくれる
 gem 'aws-sdk-s3', '~> 1' # AWS S3のRubyクライアント
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
