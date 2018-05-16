@@ -1,0 +1,81 @@
+# config
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'vendor/**/*'
+    - 'client/**/*'
+    - Gemfile
+    - bin/*
+    - db/schema.rb
+
+Rails:
+  Enabled: true
+
+# my style
+AsciiComments:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+WordArray:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: brackets
+
+Style/NumericPredicate:
+  EnforcedStyle: comparison
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# I don't care
+
+FrozenStringLiteralComment:
+  Enabled: false
+
+LineLength:
+  Enabled: false
+
+BlockLength:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+ClassLength:
+  Enabled: false
+
+ModuleLength:
+  Enabled: false
+
+AbcSize:
+  Enabled: false
+
+PerceivedComplexity:
+  Enabled: false
+
+CyclomaticComplexity:
+  Enabled: false
+
+RescueModifier:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+FilePath:
+  Exclude:
+    - 'config/**/*'
