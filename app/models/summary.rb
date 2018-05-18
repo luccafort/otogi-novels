@@ -10,4 +10,5 @@
 #
 
 class Summary < ApplicationRecord
+  belongs_to :book
 end

@@ -14,4 +14,6 @@
 #
 
 class Account < ApplicationRecord
+  has_many :authors
+  has_many :bookmarks
 end
