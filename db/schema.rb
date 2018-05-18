@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180518153259) do
+ActiveRecord::Schema.define(version: 20180518155207) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.text "uuid", null: false, comment: "accountsとusersを紐付けるユニークなハッシュ値"
@@ -49,11 +49,25 @@ ActiveRecord::Schema.define(version: 20180518153259) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "descriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.integer "book_id", comment: "小説の作品ID"
+    t.text "description", comment: "小説の詳細説明文"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "stories", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.text "story", comment: "小説本文"
     t.integer "status", comment: "ストーリーの状態[\"ドラフト(下書き)\", \"掲載\", \"掲載中止\"]"
     t.integer "book_id", comment: "小説の作品ID"
     t.datetime "published_at", comment: "公開日時(公開予約日時)"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "summaries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.integer "book_id"
+    t.text "summary", comment: "あらすじ文"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
