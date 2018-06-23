@@ -14,6 +14,4 @@
 class Book < ApplicationRecord
   has_many :story
   belongs_to :author, dependent: :destroy
-  has_one :summary, dependent: :destroy
-  has_one :description, dependent: :destroy
 end
