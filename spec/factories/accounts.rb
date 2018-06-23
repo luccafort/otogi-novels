@@ -18,7 +18,5 @@
 FactoryBot.define do
   factory :account do
     uuid "FaYFWUiZEa,pjTP46QYAgqHV"
-    email "otogi-novel@example.com"
-    name
   end
 end
