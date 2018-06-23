@@ -3,9 +3,9 @@
 # Table name: stories
 #
 #  id           :bigint(8)        unsigned, not null, primary key
+#  book_id      :bigint(8)        unsigned
 #  story        :text(65535)
-#  status       :integer
-#  book_id      :integer
+#  status       :integer          unsigned
 #  published_at :datetime
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null

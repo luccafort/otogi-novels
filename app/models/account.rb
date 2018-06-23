@@ -18,4 +18,8 @@
 class Account < ApplicationRecord
   has_many :authors
   has_many :bookmarks
+
+  validates :uuid, presence: true
+  validates :name, presence: true
+  validates :name, allow_blank: true, length: {in: 1..255}
 end

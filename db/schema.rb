@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_05_18_153259) do
   end
 
   create_table "authors", id: :bigint, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "account_id", comment: "アカウントID(著者とアカウントは別扱い)"
+    t.bigint "account_id", comment: "アカウントID(著者とアカウントは別扱い)", unsigned: true
     t.string "handle_name", comment: "ハンドルネーム(ペンネーム、著者)"
     t.string "image_url", comment: "登録されているアイコン画像"
     t.text "profile", comment: "自己紹介文などのプロフィール"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_05_18_153259) do
   end
 
   create_table "bookmarks", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "account_id", comment: "ユーザID"
+    t.bigint "account_id", comment: "ユーザID", unsigned: true
     t.string "booknark_name", comment: "ブックマーク名"
     t.boolean "status", comment: "Enum[:public(公開)、:private(非公開))"
     t.integer "book_id", comment: "小説の作品ID"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_05_18_153259) do
 
   create_table "books", id: :bigint, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title", comment: "小説の作品タイトル"
-    t.integer "status", comment: "小説の公開状態を表す enum[\"非公開(draft)\",\"連載中(publish)\",\"連載休止(paused)\",\"完結済み(completed)\"]"
+    t.integer "status", limit: 1, comment: "小説の公開状態を表す enum[\"非公開(draft)\",\"連載中(publish)\",\"連載休止(paused)\",\"完結済み(completed)\"]"
     t.text "summary", comment: "小説のあらすじ"
     t.text "description", comment: "小説の詳細説明"
     t.datetime "created_at", null: false
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 2018_05_18_153259) do
   end
 
   create_table "stories", id: :bigint, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "book_id", comment: "小説の作品ID"
+    t.bigint "book_id", comment: "小説の作品ID", unsigned: true
     t.text "story", comment: "小説本文"
-    t.integer "status", comment: "ストーリーの状態[\"下書き(draft)\", \"掲載(publish)\", \"掲載中止(paused)\"]"
+    t.integer "status", limit: 1, comment: "ストーリーの状態[\"下書き(draft)\", \"掲載(publish)\", \"掲載中止(paused)\"]", unsigned: true
     t.datetime "published_at", comment: "公開日時(公開予約日時)"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

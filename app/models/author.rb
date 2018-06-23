@@ -3,7 +3,7 @@
 # Table name: authors
 #
 #  id          :bigint(8)        unsigned, not null, primary key
-#  account_id  :integer
+#  account_id  :bigint(8)        unsigned
 #  handle_name :string(255)
 #  image_url   :string(255)
 #  profile     :text(65535)
