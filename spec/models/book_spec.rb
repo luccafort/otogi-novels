@@ -3,6 +3,7 @@
 # Table name: books
 #
 #  id          :bigint(8)        unsigned, not null, primary key
+#  author_id   :bigint(8)        unsigned, not null
 #  title       :string(255)
 #  status      :integer
 #  summary     :text(65535)

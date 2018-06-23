@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_05_18_153259) do
   end
 
   create_table "books", id: :bigint, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "author_id", null: false, unsigned: true
     t.string "title", comment: "小説の作品タイトル"
     t.integer "status", limit: 1, comment: "小説の公開状態を表す enum[\"非公開(draft)\",\"連載中(publish)\",\"連載休止(paused)\",\"完結済み(completed)\"]"
     t.text "summary", comment: "小説のあらすじ"
