@@ -1,7 +1,6 @@
 class CreateAccounts < ActiveRecord::Migration[5.1]
   def change
-    create_table :accounts, id: :bigint, unsigned: true do |t|
-      t.text :uuid, unique: true, null: false, comment: 'アカウントごとにユニークなハッシュ値'
+    create_table :accounts do |t|
       t.string :email, comment: 'emailはユニークかつ全て小文字で登録される'
       t.string :name, comment: 'アカウント名(著者名とは違う)'
       t.string :password, unique: true, null: false, comment: '暗号化されたパスワード'

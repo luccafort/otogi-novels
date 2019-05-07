@@ -2,7 +2,7 @@
 #
 # Table name: bookmarks
 #
-#  account_id    :bigint(8)        unsigned
+#  account_id    :bigint           unsigned
 #  booknark_name :string(255)
 #  status        :boolean
 #  book_id       :integer

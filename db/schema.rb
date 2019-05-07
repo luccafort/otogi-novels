@@ -12,8 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_05_18_153259) do
 
-  create_table "accounts", id: :bigint, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.text "uuid", null: false, comment: "アカウントごとにユニークなハッシュ値"
+  create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", comment: "emailはユニークかつ全て小文字で登録される"
     t.string "name", comment: "アカウント名(著者名とは違う)"
     t.string "password", null: false, comment: "暗号化されたパスワード"
