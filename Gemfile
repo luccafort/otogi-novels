@@ -40,11 +40,9 @@ gem 'gon' # RailsからJSにデータを渡す時のヘルパー
 gem 'carrierwave' # アップロードされてきたデータをハンドリングして、カラムへの割当や、バリデーションやリサイズをしてくれる
 gem 'carrierwave-base64' # BASE64されたファイルのアップロードをできるようにする
 gem 'mini_magick' # carrierwaveの動作に必要なimage magickのドライバ
-gem 'fog-aws' # carrierwaveからAWSのS3にデータをアップロードするためのドライバ
 gem 'whenever', require: false # cronをデプロイと同時に設定してくれる
 gem 'validates_timeliness', '~> 4.0' # 時間関係のvalidationを追加してくれる
 gem 'faker' # テスト用データを生成してくれる
-gem 'aws-sdk-s3', '~> 1' # AWS S3のRubyクライアント
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker'
 
@@ -53,7 +51,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'rspec' # 自動テスト
   gem 'rspec-rails', '~> 3.5' # rspecのrailsに対する拡張
   gem 'database_cleaner' # テスト時にデータベースをロールバックしてくれる
   gem 'letter_opener_web' # メールサーバになって、開発時にメールの受信の確認やテストを書きやすくしてくれる
