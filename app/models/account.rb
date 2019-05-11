@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ## Schema Information
 #
 # Table name: `accounts`
@@ -37,5 +39,5 @@ class Account < ApplicationRecord
   has_many :bookmarks
 
   validates :name, presence: true
-  validates :name, allow_blank: true, length: {in: 1..255}
+  validates :name, allow_blank: true, length: { in: 1..255 }
 end
