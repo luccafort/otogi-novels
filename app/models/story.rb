@@ -8,7 +8,7 @@
 # ------------------- | ------------------ | ---------------------------
 # **`id`**            | `bigint`           | `unsigned, not null, primary key`
 # **`book_id`**       | `bigint`           | `unsigned`
-# **`story`**         | `text(65535)`      |
+# **`content`**       | `text(65535)`      |
 # **`status`**        | `integer`          | `unsigned`
 # **`published_at`**  | `datetime`         |
 # **`created_at`**    | `datetime`         | `not null`

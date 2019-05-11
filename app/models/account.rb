@@ -4,18 +4,28 @@
 #
 # ### Columns
 #
-# Name                   | Type               | Attributes
-# ---------------------- | ------------------ | ---------------------------
-# **`id`**               | `bigint`           | `not null, primary key`
-# **`email`**            | `string(255)`      |
-# **`name`**             | `string(255)`      |
-# **`password`**         | `string(255)`      | `not null`
-# **`image_url`**        | `string(255)`      |
-# **`approved_at`**      | `datetime`         |
-# **`banned_at`**        | `datetime`         |
-# **`unsubscribed_at`**  | `datetime`         |
-# **`created_at`**       | `datetime`         | `not null`
-# **`updated_at`**       | `datetime`         | `not null`
+# Name                          | Type               | Attributes
+# ----------------------------- | ------------------ | ---------------------------
+# **`id`**                      | `bigint`           | `not null, primary key`
+# **`name`**                    | `string(255)`      |
+# **`email`**                   | `string(255)`      | `default(""), not null`
+# **`encrypted_password`**      | `string(255)`      | `default(""), not null`
+# **`image_url`**               | `string(255)`      |
+# **`reset_password_token`**    | `string(255)`      |
+# **`reset_password_sent_at`**  | `datetime`         |
+# **`remember_created_at`**     | `datetime`         |
+# **`approved_at`**             | `datetime`         |
+# **`banned_at`**               | `datetime`         |
+# **`unsubscribed_at`**         | `datetime`         |
+# **`created_at`**              | `datetime`         | `not null`
+# **`updated_at`**              | `datetime`         | `not null`
+#
+# ### Indexes
+#
+# * `index_accounts_on_email` (_unique_):
+#     * **`email`**
+# * `index_accounts_on_reset_password_token` (_unique_):
+#     * **`reset_password_token`**
 #
 
 class Account < ApplicationRecord
