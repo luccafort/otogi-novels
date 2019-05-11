@@ -17,4 +17,5 @@
 
 class Bookmark < ApplicationRecord
   belongs_to :account
+  has_one :stroy
 end

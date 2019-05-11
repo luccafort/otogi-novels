@@ -20,13 +20,14 @@ class Book < ApplicationRecord
   has_many :story
   belongs_to :author, dependent: :destroy
 
-  DRAFT = 100.freeze
-  PUBLISH = 200.freeze
-  COMPLETED = 300.freeze
-  PAUSED = 400.freeze
+  DRAFT = 0.freeze
+  PUBLISH = 1.freeze
+  COMPLETED = 2.freeze
+  PAUSED = 3.freeze
+  BANNED = 4.freeze
 
   # 下書き、公開、完結済み、中止のステータスコード
-  enum status: { draft: DRAFT, publish: PUBLISH, completed: COMPLETED, paused: PAUSED }
+  enum status: { draft: DRAFT, publish: PUBLISH, completed: COMPLETED, paused: PAUSED, banned: BANNED }
 
   validates :title, presence: true
   validates :title, allow_nil: true, length: {in: 1..255}

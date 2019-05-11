@@ -19,10 +19,13 @@
 #
 
 class Account < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   has_many :authors
   has_many :bookmarks
 
-  validates :uuid, presence: true
   validates :name, presence: true
   validates :name, allow_blank: true, length: {in: 1..255}
 end
