@@ -1,14 +1,20 @@
-# == Schema Information
+# ## Schema Information
 #
-# Table name: bookmarks
+# Table name: `bookmarks`
 #
-#  account_id :integer
-#  book_id    :integer
-#  story_id   :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+# ### Columns
+#
+# Name              | Type               | Attributes
+# ----------------- | ------------------ | ---------------------------
+# **`account_id`**  | `bigint`           | `unsigned`
+# **`label`**       | `string(255)`      | `not null`
+# **`published`**   | `boolean`          | `default(TRUE), not null`
+# **`story_id`**    | `integer`          | `not null`
+# **`created_at`**  | `datetime`         | `not null`
+# **`updated_at`**  | `datetime`         | `not null`
 #
 
 class Bookmark < ApplicationRecord
   belongs_to :account
+  has_one :stroy
 end

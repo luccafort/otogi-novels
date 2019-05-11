@@ -2,13 +2,14 @@
 #
 # Table name: books
 #
-#  id             :bigint(8)        unsigned, not null, primary key
-#  title          :string(255)
-#  status         :integer
-#  summary_id     :integer          unsigned
-#  description_id :integer          unsigned
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
+#  id          :bigint           unsigned, not null, primary key
+#  author_id   :bigint           unsigned, not null
+#  title       :string(255)
+#  status      :integer
+#  summary     :text(65535)
+#  description :text(65535)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 require 'rails_helper'

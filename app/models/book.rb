@@ -1,19 +1,39 @@
-# == Schema Information
+# ## Schema Information
 #
-# Table name: books
+# Table name: `books`
 #
-#  id             :bigint(8)        unsigned, not null, primary key
-#  title          :string(255)
-#  status         :integer
-#  summary_id     :integer          unsigned
-#  description_id :integer          unsigned
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
+# ### Columns
+#
+# Name               | Type               | Attributes
+# ------------------ | ------------------ | ---------------------------
+# **`id`**           | `bigint`           | `unsigned, not null, primary key`
+# **`author_id`**    | `bigint`           | `unsigned, not null`
+# **`title`**        | `string(255)`      |
+# **`status`**       | `integer`          |
+# **`summary`**      | `text(65535)`      |
+# **`description`**  | `text(65535)`      |
+# **`created_at`**   | `datetime`         | `not null`
+# **`updated_at`**   | `datetime`         | `not null`
 #
 
 class Book < ApplicationRecord
   has_many :story
   belongs_to :author, dependent: :destroy
-  has_one :summary, dependent: :destroy
-  has_one :description, dependent: :destroy
+
+  DRAFT = 0.freeze
+  PUBLISH = 1.freeze
+  COMPLETED = 2.freeze
+  PAUSED = 3.freeze
+  BANNED = 4.freeze
+
+  # 下書き、公開、完結済み、中止のステータスコード
+  enum status: { draft: DRAFT, publish: PUBLISH, completed: COMPLETED, paused: PAUSED, banned: BANNED }
+
+  validates :title, presence: true
+  validates :title, allow_nil: true, length: {in: 1..255}
+  validates :status, allow_nil: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+  validates :summary, presence: true
+  validates :summary, allow_nil: true, length: {in: 1..65535}
+  validates :description, presence: true
+  validates :description, allow_nil: true, length: {in: 1..65535}
 end

@@ -24,8 +24,21 @@ class BooksController < ApplicationController
   end
 
   def update
+    @book = Book.find(params[:id])
+    return render_bad_request "not found book! id:#{params[:id]}" if @book.blank?
+
+    if @book.update(book_params)
+      render_no_content
+    else
+      render_invalid_validate
+    end
   end
 
   def destroy
   end
+
+  private
+    def book_params
+      params.require(:book).permit(:title, :status, :summary, :description)
+    end
 end
