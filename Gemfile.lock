@@ -92,7 +92,7 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
-    database_cleaner (1.7.0)
+    database_rewinder (0.9.1)
     debug_inspector (0.0.3)
     devise (4.6.2)
       bcrypt (~> 3.0)
@@ -123,18 +123,13 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
+    global (1.1.0)
+      activesupport (>= 2.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    gon (6.2.1)
-      actionpack (>= 3.0)
-      multi_json
-      request_store (>= 1.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
-    jbuilder (2.8.0)
-      activesupport (>= 4.2.0)
-      multi_json (>= 1.2)
     json-schema (2.8.1)
       addressable (>= 2.4)
     launchy (2.4.3)
@@ -165,7 +160,6 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    multi_json (1.13.1)
     multipart-post (2.0.0)
     mysql2 (0.5.2)
     nio4r (2.3.1)
@@ -284,10 +278,8 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    timecop (0.9.1)
     timeliness (0.3.10)
-    turbolinks (5.2.0)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.1.20)
@@ -330,15 +322,14 @@ DEPENDENCIES
   capybara (~> 2.13)
   carrierwave
   carrierwave-base64
-  database_cleaner
+  database_rewinder
   devise
   dotenv-rails
   draper
   factory_bot_rails
   faker
   faraday
-  gon
-  jbuilder (~> 2.5)
+  global
   json-schema
   letter_opener_web
   listen (>= 3.0.5, < 3.2)
@@ -355,7 +346,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
+  timecop
   uglifier (>= 1.3.0)
   validates_timeliness (~> 4.0)
   web-console (>= 3.3.0)
