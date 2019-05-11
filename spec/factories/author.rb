@@ -1,8 +1,7 @@
 FactoryBot.define do
   factory :author do
-    account_id { 1 }
-    handle_name { "MyString" }
-    icon_image { "MyString" }
-    profile { "MyText" }
+    handle_name { Faker::Twitter.screen_name }
+    image_url { Faker::Avatar.image }
+    profile { Faker::Twitter.user[:description] }
   end
 end
