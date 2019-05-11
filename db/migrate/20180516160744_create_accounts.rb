@@ -23,7 +23,7 @@ class CreateAccounts < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    add_index :accounts, :email,                unique: true
+    add_index :accounts, :email, unique: true
     add_index :accounts, :reset_password_token, unique: true
   end
 end

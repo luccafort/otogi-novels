@@ -18,5 +18,5 @@
 
 class Bookmark < ApplicationRecord
   belongs_to :account
-  has_one :stroy
+  belongs_to :story
 end

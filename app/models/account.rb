@@ -35,9 +35,9 @@ class Account < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :authors
-  has_many :bookmarks
+  has_many :authors, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   validates :name, presence: true
-  validates :name, allow_blank: true, length: { in: 1..255 }
+  validates :name, allow_blank: true, length: {in: 1..255}
 end
