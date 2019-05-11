@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateStories < ActiveRecord::Migration[5.1]
   def change
     create_table :stories, id: :bigint, unsigned: true do |t|

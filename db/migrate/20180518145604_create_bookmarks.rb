@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateBookmarks < ActiveRecord::Migration[5.1]
   def change
     create_table :bookmarks, id: false, primary_key: [:account_id, :book_id, :story_id] do |t|

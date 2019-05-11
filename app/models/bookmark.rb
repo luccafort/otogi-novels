@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ## Schema Information
 #
 # Table name: `bookmarks`
@@ -16,5 +18,5 @@
 
 class Bookmark < ApplicationRecord
   belongs_to :account
-  has_one :stroy
+  belongs_to :story
 end

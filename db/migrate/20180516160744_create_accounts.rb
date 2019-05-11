@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class CreateAccounts < ActiveRecord::Migration[5.1]
   def change
     create_table :accounts do |t|
       t.string :name, comment: 'アカウント名(著者名とは違う)'
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false, default: ''
+      t.string :encrypted_password, null: false, default: ''
       t.string :image_url, comment: 'アイコン画像'
 
       ## Recoverable
@@ -21,7 +23,7 @@ class CreateAccounts < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    add_index :accounts, :email,                unique: true
+    add_index :accounts, :email, unique: true
     add_index :accounts, :reset_password_token, unique: true
   end
 end

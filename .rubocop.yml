@@ -1,19 +1,24 @@
 # config
 AllCops:
   DisplayCopNames: true
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   Exclude:
     - 'vendor/**/*'
     - 'client/**/*'
     - Gemfile
     - bin/*
     - db/schema.rb
+    - node_modules/**/*
 
 Rails:
   Enabled: true
 
 # my style
 AsciiComments:
+  Enabled: false
+
+# 複数行での「lambda」で「->」による省略記法を許可
+Lambda:
   Enabled: false
 
 Documentation:
@@ -46,7 +51,7 @@ Layout/MultilineMethodCallIndentation:
 FrozenStringLiteralComment:
   Enabled: false
 
-LineLength:
+Metrics/LineLength:
   Enabled: false
 
 BlockLength:

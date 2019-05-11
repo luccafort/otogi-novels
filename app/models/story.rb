@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ## Schema Information
 #
 # Table name: `stories`
@@ -17,5 +19,5 @@
 
 class Story < ApplicationRecord
   belongs_to :book, dependent: :destroy
-  enum status: { draft: 0, publish: 1, paused: 2, banned: 3 }
+  enum status: {draft: 0, publish: 1, paused: 2, banned: 3}
 end

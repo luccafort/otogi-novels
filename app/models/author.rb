@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ## Schema Information
 #
 # Table name: `authors`
@@ -16,6 +18,6 @@
 #
 
 class Author < ApplicationRecord
-  has_many :books
+  has_many :books, dependent: :destroy
   belongs_to :account
 end
