@@ -45,7 +45,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker' # いろいろなパターンのダミーデータを作成してくれるgem
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.1'
+  gem 'capybara', '~> 3.19'
   gem 'rspec-rails', '~> 3.5' # rspecのrailsに対する拡張
   gem 'database_rewinder' # テストの時にDBを毎回クリアしてくれるgem(database_cleanerより高速)
   gem 'letter_opener_web' # メールサーバになって、開発時にメールの受信の確認やテストを書きやすくしてくれる
