@@ -47,7 +47,7 @@ group :development, :test do
   gem 'faker' # いろいろなパターンのダミーデータを作成してくれるgem
   # Adds support for Capybara system testing and selenium driver
   gem 'autodoc' # テスト時にAPIのドキュメントを生成してくれる
-  gem 'capybara', '~> 3.25'
+  gem 'capybara', '~> 3.28'
   gem 'database_rewinder' # テストの時にDBを毎回クリアしてくれるgem(database_cleanerより高速)
   gem 'factory_bot_rails' # テストの初期値
   gem 'json-schema' # JSON Schemaによるバリデーションをできるようにする
