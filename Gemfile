@@ -12,7 +12,7 @@ gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.6' # mysqlのドライバー
 # Use Puma as the app server
-gem 'puma', '~> 4.0'
+gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,7 +47,7 @@ group :development, :test do
   gem 'faker' # いろいろなパターンのダミーデータを作成してくれるgem
   # Adds support for Capybara system testing and selenium driver
   gem 'autodoc' # テスト時にAPIのドキュメントを生成してくれる
-  gem 'capybara', '~> 3.25'
+  gem 'capybara', '~> 3.30'
   gem 'database_rewinder' # テストの時にDBを毎回クリアしてくれるgem(database_cleanerより高速)
   gem 'factory_bot_rails' # テストの初期値
   gem 'json-schema' # JSON Schemaによるバリデーションをできるようにする
