@@ -2,7 +2,7 @@
   "name": "otogi-novels",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "5.1",
+    "@rails/webpacker": "5.2",
     "vue": "^2.6.11",
     "vue-loader": "15.2.0",
     "vue-template-compiler": "^2.6.11"
