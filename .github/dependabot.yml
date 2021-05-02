@@ -1,0 +1,62 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "20:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: rubocop
+    versions:
+    - 1.10.0
+    - 1.11.0
+    - 1.12.0
+    - 1.12.1
+    - 1.9.0
+    - 1.9.1
+  - dependency-name: nokogiri
+    versions:
+    - 1.11.1
+    - 1.11.2
+  - dependency-name: rspec-rails
+    versions:
+    - 4.0.2
+    - 4.1.0
+    - 5.0.0
+  - dependency-name: autodoc
+    versions:
+    - 0.7.4
+    - 0.7.5
+  - dependency-name: faker
+    versions:
+    - 2.15.1
+    - 2.16.0
+  - dependency-name: capybara
+    versions:
+    - 3.35.1
+  - dependency-name: activerecord-import
+    versions:
+    - 1.0.7
+  - dependency-name: webpacker
+    versions:
+    - 5.2.1
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "20:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: vue-loader
+    versions:
+    - 16.1.2
+  - dependency-name: "@rails/webpacker"
+    versions:
+    - 5.2.1
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
