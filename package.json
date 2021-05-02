@@ -5,9 +5,9 @@
     "@rails/webpacker": "5.3",
     "vue": "^2.6.11",
     "vue-loader": "15.2.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
-    "webpack-dev-server": ">=3.11.0"
+    "webpack-dev-server": ">=3.11.2"
   }
 }
