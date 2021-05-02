@@ -140,7 +140,7 @@ GEM
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.15.0)
-    global (1.1.0)
+    global (2.0.0)
       activesupport (>= 2.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
