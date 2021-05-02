@@ -35,7 +35,7 @@ gem 'draper' # Modelに表示用のメソッドを生やすためのdecoratorを
 gem 'faraday' # HTTPのリクエストをwrapしてくれる
 gem 'global' # Railsでいい感じの設定ファイルを使うためのgem
 gem 'mini_magick' # carrierwaveの動作に必要なimage magickのドライバ
-gem 'validates_timeliness', '~> 4.1' # 時間関係のvalidationを追加してくれる
+gem 'validates_timeliness', '~> 5.0' # 時間関係のvalidationを追加してくれる
 gem 'whenever', require: false # cronをデプロイと同時に設定してくれる
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
