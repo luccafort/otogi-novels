@@ -47,12 +47,12 @@ group :development, :test do
   gem 'faker' # いろいろなパターンのダミーデータを作成してくれるgem
   # Adds support for Capybara system testing and selenium driver
   gem 'autodoc' # テスト時にAPIのドキュメントを生成してくれる
-  gem 'capybara', '~> 3.31'
+  gem 'capybara', '~> 3.35'
   gem 'database_rewinder' # テストの時にDBを毎回クリアしてくれるgem(database_cleanerより高速)
   gem 'factory_bot_rails' # テストの初期値
   gem 'json-schema' # JSON Schemaによるバリデーションをできるようにする
   gem 'letter_opener_web' # メールサーバになって、開発時にメールの受信の確認やテストを書きやすくしてくれる
-  gem 'rspec-rails', '~> 4.0' # rspecのrailsに対する拡張
+  gem 'rspec-rails', '~> 5.0' # rspecのrailsに対する拡張
   gem 'timecop' # テスト実行時に現在時間を操作してタイムトラベルするためのgem
 end
 
